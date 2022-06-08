@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content%}
+{% include "header.html" %}
+
+
+<!-- body -->
+
+    <!--  header end --> 
+    <!-- Blog Start -->
+    <div class="blog_main">
+    	<div class="container">
+    		<div class="row">
+    			<div class="col-sm-12">
+    				<h1 class="blog_text">Our Blog</h1>
+					<!-- <a href="{% url 'create_blog' %}"><button>Create New Blog</button></a> -->
+
+    			</div>
+    	    </div>
+
+
+
+
+
+
+
+	<div class="service_main">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6">
+					<div class="written_text">
+						<div class="like_icon"><img src="{% static 'images/like-icon.png' %}"></div>
+						{% for blog in blogs %}
+						<h1 class="written_text">Written with {{blog.title}}</h1>
+						<p>{{blog.slug}}</p>
+						<p>{{blog.text}}</p>							
+						<p>{{blog.published_at}}</p>
+						
+						{% endfor %}
+					</div>
+				</div>
+				
+		<script src="js/jquery.min.js"></script>
+		<script src="js/popper.min.js"></script>
+		<script src="js/bootstrap.bundle.min.js"></script>
+		
+  
+		{% include "footer.html" %}
+		{% endblock content %}
+	
+					
+
+				
+				
+					
+
+						
+  

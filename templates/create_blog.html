@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content%}
+{% include 'header.html' %}
+
+<div class="touch_section">
+    <div class="container">
+        <h1 class="touch_text">Let's Get In Touch!</h1>
+    </div>
+</div>
+
+<div class="lets_touch_main">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="input_main">
+                   <div class="container">
+                      <form method="post">
+                          {% csrf_token %}
+                        <div class="form-group">
+                            {{blog.title}}
+                          <!-- <input type="text" class="email-bt" placeholder="Name" name="Name"> -->
+                        </div>
+                        <div class="form-group">
+                            {{blog.slug}}
+                          <!-- <input type="text" class="email-bt" placeholder="Email" name="Email"> -->
+                        </div>
+                        <!-- <form method="post"> -->
+                            <div class="form-group">
+                                {{blog.text}}
+                              <!-- <textarea class="massage-bt" placeholder="Massage" rows="5" id="comment" name="text"></textarea> -->
+                            </div>
+                        <!-- </form> -->
+                        <div class="send_btn">
+                         <input type="submit" name="submit" value="submit" class="main_bt"></br>
+                                                    </div>                   
+                      </form>
+                   </div> 
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-12">
+                        <p class="lorem_text">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+ 
+<script src="js/jquery.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.bundle.min.js"></script>
+
+
+{% include "footer.html" %}
+{% endblock content %}

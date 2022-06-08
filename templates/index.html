@@ -1,0 +1,204 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+{% include "header.html" %}
+
+<!-- body -->
+<!-- end header end -->
+<!--banner start -->
+<div class="banner-main">
+	<div class="container">
+		<div id="main_slider" class="carousel slide" data-ride="carousel">
+			<!-- The slideshow -->
+			<div class="carousel-inner">
+				<div class="carousel-item active">
+					<div class="titlepage-h1">
+						<h1 class="bnner_title">Welcome To<br>
+							<span style="color: #10b5fa">Content Writing Services</span>
+						</h1>
+						<p class="long_text">It is a long established fact that a reader will be distracted by the
+							readable content of a page when looking </p>
+					</div>
+					<div class="btn_main">
+						<button type="button" class="btn btn-dark btn-lg"><a
+								href="{% url 'contact' %}">Contact</a></button>
+					</div>
+				</div>
+				<div class="carousel-item">
+					<div class="titlepage-h1">
+						<h1 class="bnner_title">Welcome To<br>
+							<span style="color: #10b5fa">Content Writing Services</span>
+						</h1>
+						<p class="long_text">It is a long established fact that a reader will be distracted by the
+							readable content of a page when looking </p>
+					</div>
+					<div class="btn_main">
+						<button type="button" class="btn btn-dark btn-lg">Contact</button>
+					</div>
+				</div>
+				<div class="carousel-item">
+					<div class="titlepage-h1">
+						<h1 class="bnner_title">Welcome To<br>
+							<span style="color: #10b5fa">Content Writing Services</span>
+						</h1>
+						<p class="long_text">It is a long established fact that a reader will be distracted by the
+							readable content of a page when looking </p>
+					</div>
+					<div class="btn_main">
+						<button type="button" class="btn btn-dark btn-lg">Contact</button>
+					</div>
+				</div>
+			</div>
+			<a class="carousel-control-prev" href="#main_slider" role="button" data-slide="prev">
+				<i class="fa fa-angle-left"></i>
+			</a>
+			<a class="carousel-control-next" href="#main_slider" role="button" data-slide="prev">
+				<i class="fa fa-angle-right"></i>
+			</a>
+		</div>
+	</div>
+</div>
+<!--banner end -->
+<!--services start -->
+<div class="services_main">
+	<div class="container">
+		<div class="creative_taital">
+			<h1 class="creative_text">Creative Content Writing Services</h1>
+			<p style="color: #050000; text-align: center;">It is a long established fact that a reader will be
+				distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum
+				is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content
+				here', making it look like readable English. Many desktop publishing packages and web page editors now
+				use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites
+				still in their infancIt is a long established fact that a reader will be distracted by the readable
+				content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a
+				more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it
+				look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as
+				their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their
+				infanc</p>
+			<div class="btn_main">
+				<button type="button" class="btn btn-dark btn-lg">Get started</button>
+			</div>
+		</div>
+		<div class="section_service_2">
+			<h1 class="service_text"></h1>
+
+			<div class="lets_touch_main">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-6">
+							<div class="input_main">
+								<div class="container">
+									<form method="get">
+
+										<div class="form-group">
+											{% for blog in blogs %}
+											{{blog.title}}
+											{{blog.slug}}
+											{{blog.text}}
+											{{blog.published_at}}
+											{% endfor %}
+											<!-- <input type="text" class="email-bt" placeholder="Name" name="Name"> -->
+										</div>
+										<div class="form-group">
+											{{blog.slug}}
+											<!-- <input type="text" class="email-bt" placeholder="Email" name="Email"> -->
+										</div>
+										<!-- <form method="post"> -->
+										<div class="form-group">
+											{{blog.text}}
+											<!-- <textarea class="massage-bt" placeholder="Massage" rows="5" id="comment" name="text"></textarea> -->
+										</div>
+										<div class="form-group">
+											{{blog.published_at}}
+											
+											<!-- <textarea class="massage-bt" placeholder="Massage" rows="5" id="comment" name="text"></textarea> -->
+										</div>
+										<!-- </form> -->
+
+
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="row">
+						<div class="col-12">
+							<p class="lorem_text">It is a long established fact that a reader will be distracted by the
+								readable content of a page when looking at its layout. The point of using Lorem Ipsum is
+								that it has a more-or-less normal distribution of letters, as opposed to using 'Content
+								here, content here', making it look like readable English. Many desktop publishing
+								packages and web</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--services end -->
+
+	<!--quote_section start -->
+
+
+
+
+	<!--quote_section end -->
+	<!--touch_section start -->
+
+	<div class="touch_section">
+		<div class="container">
+			<h1 class="touch_text">Let's Get In Touch!</h1>
+		</div>
+	</div>
+
+	<div class="lets_touch_main">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6">
+					<div class="input_main">
+						<div class="container">
+							<form method="post">
+								{% csrf_token %}
+								<div class="form-group">
+									{{form.name}}
+									<!-- <input type="text" class="email-bt" placeholder="Name" name="Name"> -->
+								</div>
+								<div class="form-group">
+									{{form.email}}
+									<!-- <input type="text" class="email-bt" placeholder="Email" name="Email"> -->
+								</div>
+								<!-- <form method="post"> -->
+								<div class="form-group">
+									{{form.description}}
+									<!-- <textarea class="massage-bt" placeholder="Massage" rows="5" id="comment" name="text"></textarea> -->
+								</div>
+								<!-- </form> -->
+								<div class="send_btn">
+									<input type="submit" name="submit" value="submit" class="main_bt"></br>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="row">
+						<div class="col-12">
+							<p class="lorem_text">It is a long established fact that a reader will be distracted by the
+								readable content of a page when looking at its layout. The point of using Lorem Ipsum is
+								that it has a more-or-less normal distribution of letters, as opposed to using 'Content
+								here, content here', making it look like readable English. Many desktop publishing
+								packages and web</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	{% include "footer.html" %}
+	{% endblock content %}
+	<!--touch_section end -->
+	<!--Contact_section start -->
+
+	<!-- Javascript files-->
