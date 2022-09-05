@@ -1,5 +1,5 @@
 asgiref==3.5.2
-backports.zoneinfo
+# backports.zoneinfo
 # python_version<"3"
 dj-database-url==1.0.0
 Django==4.1.1
