@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-s*d2(dy-c!626h8#+#xjtr6kdki-r&9lb!fnxf1x+i2%5+mnoy
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = True
-DEBUG = False
+DEBUG = True
 
 # ALLOWED_HOSTS = []
 ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com']
@@ -121,11 +121,12 @@ USE_L10N = True
 
 USE_TZ = True
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR,"static")]
+# STATICFILES_DIRS = [os.path.join(BASE_DIR,"static")]
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 import dj_database_url
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
+django_heroku.settings(locals())
